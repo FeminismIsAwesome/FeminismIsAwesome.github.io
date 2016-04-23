@@ -1,1 +1,86 @@
-Hello World
+
+<label> Checkout Id (wid) </label>
+<input type="text" id="checkout_id">
+<br>
+<label> Team Name</label>
+<input type="text" id="team_name">
+<br>
+<label>Tracking Tag</label>
+<input type="text" id="tracking_tag">
+<br>
+<label> Previous Amount Made </label>
+<input type="text" id="previous">
+</input>
+<br>
+<label> Goal Amount </label>
+<input type="text" id="goal"> </input>
+<br>
+
+<button id="generator">Generate </button>
+
+<code style="white-space: pre;" id="content"></code>
+<script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $("#generator").click(function() {
+  	$("#content").text(`
+  		<p class="rtejustify"><img alt="" src="/sites/default/files/BAT%20banner%20%281%29.jpg" style="width: 800px; height: 281px;" /></p>
+<h1>
+	&nbsp;</h1>
+<p><span style="font-size: 2em; line-height: 1.3em;">` + $("#team_name").val() + `</span></p>
+<p>Before the national website was attacked, we raised $540. <u><strong><a href="https://co.clickandpledge.com/default.aspx?wid=` + $("#checkout_id").val() + `&trk=` + $("#tracking_tag").val() + `" target="_blank">Help us fight back and blow our fundraising goals out of the water!</a></strong></u></p>
+<div id="thermometer">
+	<div class="track">
+		<div class="goal">
+			<div class="amount">
+				800</div>
+		</div>
+		<div class="progress">
+			<div class="amount">
+				267</div>
+		</div>
+		<div class="stop1">
+			<div class="amount">
+				$0</div>
+		</div>
+		<div class="stop2">
+			<div class="amount">
+				$200</div>
+		</div>
+		<div class="stop3">
+			<div class="amount">
+				$400</div>
+		</div>
+		<div class="stop4">
+			<div class="amount">
+				$600</div>
+		</div>
+	</div>
+</div>
+<p>&nbsp;</p>
+<p><span style="line-height: 20.8px;">Joey</span></p>
+<p><span style="line-height: 20.8px;">Aliza</span></p>
+<p><span style="line-height: 20.8px;">Catherine</span></p>
+<p><span style="line-height: 20.8px;">Ruth</span></p>
+<p><span style="line-height: 20.8px;">Melissa</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img alt="" src="/sites/default/files/Group%20Photo.jpg" style="width: 800px; height: 281px;" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> </p>
+	<link href="http://feminismisawesome.github.io/test.css" rel="stylesheet" type="text/css" />
+	<script src="http://feminismisawesome.github.io/test.js" language="javascript"> <\/script>
+<script type="text/javascript">
+$(document).ready(function(){
+    extractAmounts(` + $("#goal").val() + "," + $("#previous").val() + `,"` + $("#tracking_tag").val() + `");
+});
+<\/script>
+`);
+  })
+</script>
