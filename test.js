@@ -78,8 +78,8 @@ function extractAmounts(goalAmt, previouslyMade, trackingTag) {
   var progress = parseInt(data.data)+previouslyMade;
   var amounts = {
      progress: progress,
-     goalAmount:goalAmt+previouslyMade,
-     steps: (goalAmt+previouslyMade)/4
+     goalAmount:goalAmt,
+     steps: (goalAmt)/4
   }
   thermometer(amounts.goalAmount, amounts.progress, amounts.goalAmount);
   }})
