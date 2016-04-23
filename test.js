@@ -75,7 +75,7 @@ function extractAmounts(goalAmt, previouslyMade, trackingTag) {
   $.ajax({url: "http://powerful-plateau-77155.herokuapp.com/silly/" + trackingTag,
    success: function(data) {
     data = JSON.parse(data);
-  var progress = parseInt(data.data)+540;
+  var progress = parseInt(data.data)+previouslyMade;
   var amounts = {
      progress: progress,
      goalAmount:goalAmt+previouslyMade,
