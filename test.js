@@ -72,7 +72,8 @@ function thermometer(goalAmount, progressAmount, animate) {
 }
 
 function extractAmounts(goalAmt, previouslyMade, trackingTag) {
-  $.get("https://powerful-plateau-77155.herokuapp.com/silly/" + trackingTag).then(function(data) {
+  $.get({url: "https://powerful-plateau-77155.herokuapp.com/silly/" + trackingTag,
+   success: function(data) {
   var progress = parseInt(data.data)+540;
   var amounts = {
      progress: progress,
@@ -80,6 +81,6 @@ function extractAmounts(goalAmt, previouslyMade, trackingTag) {
      steps: (goalAmt+previouslyMade)/4
   }
   thermometer(amounts.goalAmount, amounts.progress, amounts.goalAmount);
-  })
+  }})
 	
 }
