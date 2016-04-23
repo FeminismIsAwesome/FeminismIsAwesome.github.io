@@ -72,7 +72,7 @@ function thermometer(goalAmount, progressAmount, animate) {
 }
 
 function extractAmounts(goalAmt, previouslyMade, trackingTag) {
-  $.getJSON({url: "http://powerful-plateau-77155.herokuapp.com/silly/" + trackingTag,
+  $.ajax({url: "http://powerful-plateau-77155.herokuapp.com/silly/" + trackingTag,
    success: function(data) {
   var progress = parseInt(data.data)+540;
   var amounts = {
