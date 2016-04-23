@@ -25,7 +25,7 @@
 <script type="text/javascript">
   $("#generator").click(function() {
   	var possibleMembers = $("#members").val().split(",").map(function(member) {
-  		"<p> <span style='line-height: 20.8px;'>" + member +"</span> </p> "
+  		return "<p> <span style='line-height: 20.8px;'>" + member +"</span> </p> ";
   	}).join('\n');
   	$("#content").text(`
   		<p class="rtejustify"><img alt="" src="/sites/default/files/BAT%20banner%20%281%29.jpg" style="width: 800px; height: 281px;" /></p>
@@ -61,7 +61,7 @@
 		</div>
 	</div>
 </div>
-<p style="line-height: 20.8px;">` + possibleMembers + `</p>
+` + possibleMembers + `
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><img alt="" src="/sites/default/files/Group%20Photo.jpg" style="width: 800px; height: 281px;" /></p>
